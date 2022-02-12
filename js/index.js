@@ -10,7 +10,9 @@ let cells = document.querySelectorAll('.field td');
 let counterX = document.querySelector('.counter-wins__x');
 let counterO = document.querySelector('.counter-wins__o');
 let button = document.querySelector('.btn');
+let winnerText = document.querySelector('.winner');
 
+//Задание начальных значений
 counterX.innerHTML = "0"
 counterO.innerHTML = "0"
 
@@ -18,6 +20,7 @@ button.addEventListener('click', () => {
 	restartGame(cells)
 })
 
+//Начало игры
 startGame(cells);
 
 let isWin = (cells) => {
@@ -50,8 +53,12 @@ function eventListener() {
 		return;
 	}
 
-	this.innerHTML = ['X', 'O'][i % 2];
+	if (this.innerHTML != '') {
+		return
+	}
 
+	this.innerHTML = ['X', 'O'][i % 2];
+	//Проверка победителя
 	if (isWin(cells)) {
 		alert(`Победил, ${this.innerHTML}`, this.innerHTML); 
 		if (this.innerHTML == 'X') {
@@ -70,12 +77,14 @@ function eventListener() {
 	i++;
 }
 
+//Функция старта игры
 function startGame(cells) {
 	for (let cell of cells) {
 		cell.addEventListener('click', eventListener, {once : false});
 	}
 }
 
+//Функция рестарта игры
 function restartGame(cells) {
 	for (let cell of cells) {
 		cell.innerHTML = '';

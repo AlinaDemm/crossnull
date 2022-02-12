@@ -7,28 +7,28 @@ body {
   font-family: "Architects Daughter", sans-serif;
 }
 
-button {
-  cursor: url("/cursor.png"), auto;
-}
-
 h1 {
   text-align: center;
   font-size: 50px;
+  padding-top: 26px;
+  color: #191c25;
+}
+
+p {
+  font-size: 20px;
 }
 
 header {
-  display: flex;
-  align-items: center;
-  height: 140px;
+  height: 120px;
   background-color: aliceblue;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: center;
 }
 
 .container {
   max-width: 1140px;
   width: 95%;
   margin: auto;
+  padding-top: 40px;
 }
 
 .counter {
@@ -38,6 +38,13 @@ header {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 30px;
+}
+
+.counter-wins__x,
+.counter-wins__o {
+  color: rgb(158, 33, 58);
+  font-weight: bold;
 }
 
 .field {
@@ -62,7 +69,7 @@ header {
 .btn {
   font-family: "Architects Daughter", sans-serif;
   margin-top: 45px;
-  cursor: url("/cursor.png"), auto;
+  cursor: url("../cursor.png"), auto;
   width: 220px;
   height: 48px;
   font-size: 25px;
